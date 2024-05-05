@@ -1,0 +1,19 @@
+[build]
+  base = "/"
+  publish = "/"
+  command = "npm run build" # Example command, change it according to your build process
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/defaultsongs/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/cards/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
