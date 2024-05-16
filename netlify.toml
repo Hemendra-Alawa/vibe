@@ -1,0 +1,14 @@
+# netlify.toml file
+[build]
+  publish = "/"
+  command = "echo 'No build command needed'"
+
+[[headers]]
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
